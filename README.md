@@ -23,11 +23,6 @@ samples, guidance on mobile development, and a full API reference.
 - [功能与特性](#功能与特性)
 - [插件使用](#插件使用)
 - [运行调试](#运行调试)
-- [ToDo](#ToDo)
-
-## 下载
-
-![Flutter_Trip](<https://raw.githubusercontent.com/wkl007/flutter_trip/master/screenshot/flutter_trip_two_code.png>)
 
 ## 真机预览
 
