@@ -14,12 +14,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List _imageUrls = [
-    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586350599114&di=20deb96a21f3e0549d39d864336afb7e&imgtype=0&src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D3661399490%2C2307944415%26fm%3D214%26gp%3D0.jpg',
-    'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586350609897&di=cf049b5ad76800d0f64323c74f8e918b&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1100172608%2C3877538389%26fm%3D214%26gp%3D0.jpg',
-    'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3404221704,526751635&fm=26&gp=0.jpg'
-  ];
   double appBarAlpha = 0;
+  List<CommonModel> bannerList = [];
   List<CommonModel> localNavList = [];
   GridNavModel gridNavModel;
 
@@ -44,6 +40,7 @@ class _HomePageState extends State<HomePage> {
   loadData() {
     HomeDao.fetch().then((model) {
       setState(() {
+        bannerList = model.bannerList;
         localNavList = model.localNavList;
         gridNavModel = model.gridNav;
       });
@@ -71,28 +68,9 @@ class _HomePageState extends State<HomePage> {
               },
               child: ListView(
                 children: <Widget>[
-                  Container(
-                    height: 160,
-                    child: Swiper(
-                      itemCount: _imageUrls.length,
-                      autoplay: true,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Image.network(
-                          _imageUrls[index],
-                          fit: BoxFit.fill,
-                        );
-                      },
-                      pagination: SwiperPagination(),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(7, 4, 7, 4),
-                    child: LocalNav(localNavList: localNavList),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(7, 0, 7, 4),
-                    child: GridNav(gridNavModel: gridNavModel),
-                  ),
+                  _banner(),
+                  _localNav(),
+                  _gridNav(),
                   Container(
                     height: 1000,
                     child: ListTile(title: Text('resultString')),
@@ -116,6 +94,37 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _banner() {
+    return Container(
+      height: 200,
+      child: Swiper(
+        itemCount: bannerList.length,
+        autoplay: true,
+        itemBuilder: (BuildContext context, int index) {
+          return Image.network(
+            bannerList[index].icon,
+            fit: BoxFit.fill,
+          );
+        },
+        pagination: SwiperPagination(),
+      ),
+    );
+  }
+
+  Widget _localNav() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(7, 4, 7, 4),
+      child: LocalNav(localNavList: localNavList),
+    );
+  }
+
+  Widget _gridNav() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(7, 0, 7, 4),
+      child: GridNav(gridNavModel: gridNavModel),
     );
   }
 }
