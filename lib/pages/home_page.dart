@@ -5,6 +5,7 @@ import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/models/index.dart';
 import 'package:flutter_trip/widget/grid_nav.dart';
 import 'package:flutter_trip/widget/local_nav.dart';
+import 'package:flutter_trip/widget/webview.dart';
 
 const APPBAR_SCROLL_OFFSET = 100;
 
@@ -110,6 +111,19 @@ class _HomePageState extends State<HomePage> {
           );
         },
         pagination: SwiperPagination(),
+        onTap: (index) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => WebView(
+                url: bannerList[index].url,
+                statusBarColor: bannerList[index].statusBarColor,
+                hideAppBar: bannerList[index].hideAppBar,
+                title: bannerList[index].title,
+              ),
+            ),
+          );
+        },
       ),
     );
   }
