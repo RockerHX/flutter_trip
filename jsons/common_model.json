@@ -1,0 +1,7 @@
+{
+    "icon": "https://www.devio.org/io/flutter_app/img/ln_weekend.png",
+    "title": "周边游",
+    "url": "https://m.ctrip.com/webapp/vacations/tour/around?&from=https%3A%2F%2Fm.ctrip.com%2Fhtml5%2F",
+    "statusBarColor": "52149f",
+    "hideAppBar": true
+}

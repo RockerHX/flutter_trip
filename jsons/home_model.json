@@ -1,0 +1,8 @@
+{
+    "config": "$config_model",
+    "bannerList": "$[]common_model",
+    "localNavList": "$[]common_model",
+    "gridNav": "$grid_nav_model",
+    "subNavList": "$[]common_model",
+    "salesBox": "$sales_box_model"
+}
