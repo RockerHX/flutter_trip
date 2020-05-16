@@ -36,7 +36,7 @@ class _WebViewState extends State<WebView> {
   void initState() {
     super.initState();
     _onUrlChanged = webViewRefrence.onUrlChanged.listen((String url) {
-      print(url);
+      // print(url);
     });
     _onStateChanged =
         webViewRefrence.onStateChanged.listen((WebViewStateChanged state) {
