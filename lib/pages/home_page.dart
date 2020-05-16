@@ -5,6 +5,7 @@ import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/models/index.dart';
 import 'package:flutter_trip/widget/grid_nav.dart';
 import 'package:flutter_trip/widget/local_nav.dart';
+import 'package:flutter_trip/widget/sub_nav.dart';
 import 'package:flutter_trip/widget/webview.dart';
 
 const APPBAR_SCROLL_OFFSET = 100;
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   List<CommonModel> bannerList = [];
   List<CommonModel> localNavList = [];
   GridNavModel gridNavModel;
+  List<CommonModel> subNavList = [];
 
   @override
   void initState() {
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage> {
         bannerList = model.bannerList;
         localNavList = model.localNavList;
         gridNavModel = model.gridNav;
+        subNavList = model.subNavList;
       });
     }).catchError((e) {
       print(e);
@@ -72,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                   _banner(),
                   _localNav(),
                   _gridNav(),
+                  _subNav(),
                   Container(
                     height: 1000,
                     child: ListTile(title: Text('resultString')),
@@ -139,6 +143,13 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: EdgeInsets.fromLTRB(7, 0, 7, 4),
       child: GridNav(gridNavModel: gridNavModel),
+    );
+  }
+
+  Widget _subNav() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(7, 4, 7, 4),
+      child: SubNav(subNavList: subNavList),
     );
   }
 }
