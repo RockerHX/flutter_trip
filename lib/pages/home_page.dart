@@ -5,6 +5,7 @@ import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/models/index.dart';
 import 'package:flutter_trip/widget/grid_nav.dart';
 import 'package:flutter_trip/widget/local_nav.dart';
+import 'package:flutter_trip/widget/sales_box.dart';
 import 'package:flutter_trip/widget/sub_nav.dart';
 import 'package:flutter_trip/widget/webview.dart';
 
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   List<CommonModel> localNavList = [];
   GridNavModel gridNavModel;
   List<CommonModel> subNavList = [];
+  SalesBoxModel salesBox;
 
   @override
   void initState() {
@@ -47,6 +49,7 @@ class _HomePageState extends State<HomePage> {
         localNavList = model.localNavList;
         gridNavModel = model.gridNav;
         subNavList = model.subNavList;
+        salesBox = model.salesBox;
       });
     }).catchError((e) {
       print(e);
@@ -76,10 +79,7 @@ class _HomePageState extends State<HomePage> {
                   _localNav(),
                   _gridNav(),
                   _subNav(),
-                  Container(
-                    height: 1000,
-                    child: ListTile(title: Text('resultString')),
-                  ),
+                  _salesBox(),
                 ],
               ),
             ),
@@ -150,6 +150,13 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: EdgeInsets.fromLTRB(7, 4, 7, 4),
       child: SubNav(subNavList: subNavList),
+    );
+  }
+
+  Widget _salesBox() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 4, 0, 4),
+      child: SalesBox(salesBox: salesBox),
     );
   }
 }
