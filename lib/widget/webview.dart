@@ -93,7 +93,7 @@ class _WebViewState extends State<WebView> {
     }
     return Container(
       color: backgroundColor,
-      padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
+      padding: EdgeInsets.fromLTRB(10, 40, 0, 10),
       child: FractionallySizedBox(
         widthFactor: 1,
         child: Stack(
@@ -103,7 +103,6 @@ class _WebViewState extends State<WebView> {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: EdgeInsets.only(left: 10),
                 child: Icon(
                   Icons.close,
                   color: backButtonColor,
@@ -119,7 +118,7 @@ class _WebViewState extends State<WebView> {
                   widget.title ?? '',
                   style: TextStyle(
                     color: backButtonColor,
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                   ),
                 ),
               ),
