@@ -11,6 +11,7 @@ class SalesBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(6),
         color: Colors.white,
       ),
       child: _items(context),
@@ -74,7 +75,7 @@ class SalesBox extends StatelessWidget {
           Container(
             padding: EdgeInsets.fromLTRB(10, 2, 10, 2),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(12),
               gradient: LinearGradient(
                 colors: [
                   Color(0xffff4e63),
@@ -123,6 +124,7 @@ class SalesBox extends StatelessWidget {
 
   Widget _item(
       BuildContext context, CommonModel model, bool big, bool left, bool last) {
+    BorderSide borderSide = BorderSide(width: 0.8, color: Color(0xfff2f2f2));
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -132,14 +134,24 @@ class SalesBox extends StatelessWidget {
               url: model.url,
               statusBarColor: model.statusBarColor,
               hideAppBar: model.hideAppBar,
+              title: model.title,
             ),
           ),
         );
       },
-      child: Image.network(
-        model.icon,
-        width: (MediaQuery.of(context).size.width / 2) - 5,
-        height: big ? 130 : 80,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            right: left ? borderSide : BorderSide.none,
+            bottom: last ? BorderSide.none : borderSide,
+          ),
+        ),
+        child: Image.network(
+          model.icon,
+          fit: BoxFit.fill,
+          width: (MediaQuery.of(context).size.width / 2) - 10,
+          height: big ? 130 : 80,
+        ),
       ),
     );
   }

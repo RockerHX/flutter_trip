@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _salesBox() {
     return Padding(
-      padding: EdgeInsets.fromLTRB(0, 4, 0, 4),
+      padding: EdgeInsets.fromLTRB(7, 4, 7, 4),
       child: SalesBox(salesBox: salesBox),
     );
   }
