@@ -108,8 +108,8 @@ class _HomePageState extends State<HomePage> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter)),
           child: Container(
-            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
-            height: 80,
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+            height: 90,
             decoration: BoxDecoration(
               color: Color.fromARGB((appBarAlpha * 255).toInt(), 255, 255, 255),
             ),
