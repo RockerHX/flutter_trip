@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/models/index.dart';
+import 'package:flutter_trip/pages/search_page.dart';
 import 'package:flutter_trip/widget/grid_nav.dart';
 import 'package:flutter_trip/widget/loading_container.dart';
 import 'package:flutter_trip/widget/local_nav.dart';
@@ -209,11 +210,14 @@ class _HomePageState extends State<HomePage> {
   void _jumpToCity() {}
 
   void _jumpToSearch() {
-    // NavigatorUtil.push(
-    //     context,
-    //     SearchPage(
-    //       hint: SEARCH_BAR_DEFAULT_TEXT,
-    //     ));
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SearchPage(
+          hint: SEARCH_BAR_DEFAULT_TEXT,
+        ),
+      ),
+    );
   }
 
   //跳转语音识别页面

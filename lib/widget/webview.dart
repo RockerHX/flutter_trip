@@ -15,7 +15,7 @@ class WebView extends StatefulWidget {
   WebView(
       {Key key,
       @required this.url,
-      @required this.statusBarColor,
+      this.statusBarColor = 'ffffff',
       this.hideAppBar,
       this.title,
       this.backForbid = false})

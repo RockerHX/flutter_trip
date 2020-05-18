@@ -8,6 +8,7 @@ part 'search_model.g.dart';
 class SearchModel {
   SearchModel();
 
+  String keyword;
   List<SearchItem> data;
 
   factory SearchModel.fromJson(Map<String, dynamic> json) =>
