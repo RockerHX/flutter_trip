@@ -52,27 +52,61 @@ class _SearchBarState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    switch (widget.searchBarType) {
-      case SearchBarType.home:
-        return _generateHomeSearchBar();
-        break;
-      case SearchBarType.normal:
-        return _generateNormalSearchBar();
-        break;
-      case SearchBarType.homeLight:
-        return null;
-        break;
-      default:
-        return null;
-    }
+    return widget.searchBarType == SearchBarType.normal
+        ? _generateNormalSearchBar
+        : _generateHomeSearchBar;
   }
 
-  Widget _generateHomeSearchBar() {
+  Widget get _generateHomeSearchBar {
     return Container(
       child: Row(
         children: <Widget>[
           _wrapTap(
             Container(
+              padding: EdgeInsets.fromLTRB(6, 5, 5, 5),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    widget.city,
+                    style: TextStyle(color: _homeFontColor, fontSize: 14),
+                  ),
+                  Icon(
+                    Icons.expand_more,
+                    color: _homeFontColor,
+                    size: 22,
+                  ),
+                ],
+              ),
+            ),
+            widget.leftButtonClick,
+          ),
+          Expanded(
+            flex: 1,
+            child: _inputBox,
+          ),
+          _wrapTap(
+            Container(
+              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+              child: Icon(
+                Icons.comment,
+                color: _homeFontColor,
+                size: 26,
+              ),
+            ),
+            widget.rightButtonClick,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget get _generateNormalSearchBar {
+    return Container(
+      child: Row(
+        children: <Widget>[
+          _wrapTap(
+            Container(
+              padding: EdgeInsets.fromLTRB(6, 5, 10, 5),
               child: widget?.hideLeft ?? false
                   ? null
                   : Icon(
@@ -85,7 +119,7 @@ class _SearchBarState extends State<SearchBar> {
           ),
           Expanded(
             flex: 1,
-            child: _inputBox(),
+            child: _inputBox,
           ),
           _wrapTap(
             Container(
@@ -105,7 +139,7 @@ class _SearchBarState extends State<SearchBar> {
     );
   }
 
-  Widget _inputBox() {
+  Widget get _inputBox {
     Color inputBoxColor;
     if (widget.searchBarType == SearchBarType.home) {
       inputBoxColor = Colors.white;
@@ -113,14 +147,24 @@ class _SearchBarState extends State<SearchBar> {
       inputBoxColor = Color(int.parse('0xffEDEDED'));
     }
     return Container(
+      height: 30,
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      decoration: BoxDecoration(
+        color: inputBoxColor,
+        borderRadius: BorderRadius.circular(
+            widget.searchBarType == SearchBarType.normal ? 5 : 15),
+      ),
       child: Row(
         children: <Widget>[
-          Icon(
-            Icons.search,
-            size: 20,
-            color: (widget.searchBarType == SearchBarType.normal)
-                ? Color(0xffa9a9a9)
-                : Colors.blue,
+          Container(
+            padding: EdgeInsets.only(right: 5),
+            child: Icon(
+              Icons.search,
+              size: 20,
+              color: (widget.searchBarType == SearchBarType.normal)
+                  ? Color(0xffa9a9a9)
+                  : Colors.blue,
+            ),
           ),
           Expanded(
             flex: 1,
@@ -134,10 +178,12 @@ class _SearchBarState extends State<SearchBar> {
                         color: Colors.black,
                         fontWeight: FontWeight.w300),
                     decoration: InputDecoration(
-                        contentPadding: EdgeInsets.fromLTRB(5, 0, 5, 0),
-                        border: InputBorder.none,
-                        hintText: widget.hint ?? '',
-                        hintStyle: TextStyle(fontSize: 15)),
+                      border: InputBorder.none,
+                      hintText: widget.hint ?? '',
+                      hintStyle: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
                   )
                 : _wrapTap(
                     Container(
@@ -149,12 +195,34 @@ class _SearchBarState extends State<SearchBar> {
                     widget.inputBoxClick,
                   ),
           ),
+          !_showClear
+              ? _wrapTap(
+                  Icon(
+                    Icons.mic,
+                    size: 22,
+                    color: widget.searchBarType == SearchBarType.normal
+                        ? Colors.blue
+                        : Colors.grey,
+                  ),
+                  widget.speakClick,
+                )
+              : _wrapTap(
+                  Icon(
+                    Icons.clear,
+                    size: 22,
+                    color: Colors.grey,
+                  ),
+                  () {
+                    setState(() {
+                      _controller.clear();
+                    });
+                    _onChanged('');
+                  },
+                ),
         ],
       ),
     );
   }
-
-  Widget _generateNormalSearchBar() {}
 
   Widget _wrapTap(Widget child, void Function() callback) {
     return GestureDetector(
@@ -178,5 +246,11 @@ class _SearchBarState extends State<SearchBar> {
     if (widget.onChanged != null) {
       widget.onChanged(text);
     }
+  }
+
+  Color get _homeFontColor {
+    return widget.searchBarType == SearchBarType.homeLight
+        ? Colors.black54
+        : Colors.white;
   }
 }
