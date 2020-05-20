@@ -72,7 +72,7 @@ const NSString *APP_ID = @"19968381";
     [self.eventManager setParameter:@[API_KEY, SECRET_KEY] forKey:BDS_ASR_API_SECRET_KEYS];
     [self.eventManager setParameter:APP_ID forKey:BDS_ASR_OFFLINE_APP_CODE];
     //配置端点检测（二选一）
-//    [self configModelVAD];
+    [self configModelVAD];
     //    [self configDNNMFE];
 
     //    [self.eventManager setParameter:@"15361" forKey:BDS_ASR_PRODUCT_ID];
