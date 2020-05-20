@@ -4,6 +4,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_trip/dao/home_dao.dart';
 import 'package:flutter_trip/models/index.dart';
 import 'package:flutter_trip/pages/search_page.dart';
+import 'package:flutter_trip/pages/speak_page.dart';
 import 'package:flutter_trip/widget/grid_nav.dart';
 import 'package:flutter_trip/widget/loading_container.dart';
 import 'package:flutter_trip/widget/local_nav.dart';
@@ -222,6 +223,11 @@ class _HomePageState extends State<HomePage> {
 
   //跳转语音识别页面
   void _jumpToSpeak() {
-    // NavigatorUtil.push(context, SpeakPage());
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SpeakPage(),
+      ),
+    );
   }
 }
