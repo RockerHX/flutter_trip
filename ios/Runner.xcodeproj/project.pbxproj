@@ -30,6 +30,13 @@
 		C61504F2247507EF006052D8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504F1247507EF006052D8 /* CoreLocation.framework */; };
 		C61504F4247507FC006052D8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504F3247507FC006052D8 /* SystemConfiguration.framework */; };
 		C61504F624750802006052D8 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504F524750802006052D8 /* GLKit.framework */; };
+		C63EAB3524750F45009F469D /* .gitIgnore in Resources */ = {isa = PBXBuildFile; fileRef = C63EAB2B24750F45009F469D /* .gitIgnore */; };
+		C63EAB3824751489009F469D /* BaiduASRSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EAB3624751489009F469D /* BaiduASRSDKManager.m */; };
+		C63EAB3924751824009F469D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504E924750763006052D8 /* libc++.tbd */; };
+		C63EAB3A2475182C009F469D /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504EA24750768006052D8 /* libz.1.2.5.tbd */; };
+		C63EAB3B24751834009F469D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504E7247506FB006052D8 /* libsqlite3.0.tbd */; };
+		C63EAB3C2475183F009F469D /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C61504E824750746006052D8 /* libiconv.2.4.0.tbd */; };
+		C63EAB3F247518A9009F469D /* BaiduASRPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EAB3E247518A9009F469D /* BaiduASRPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +88,22 @@
 		C61504F1247507EF006052D8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C61504F3247507FC006052D8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C61504F524750802006052D8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		C63EAB2824750F45009F469D /* BDSWakeupParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSWakeupParameters.h; sourceTree = "<group>"; };
+		C63EAB2924750F45009F469D /* BDSASRParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
+		C63EAB2A24750F45009F469D /* BDSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSEventManager.h; sourceTree = "<group>"; };
+		C63EAB2B24750F45009F469D /* .gitIgnore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitIgnore; sourceTree = "<group>"; };
+		C63EAB2C24750F45009F469D /* BDSUploaderDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSUploaderDefines.h; sourceTree = "<group>"; };
+		C63EAB2D24750F45009F469D /* BDSASRDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSASRDefines.h; sourceTree = "<group>"; };
+		C63EAB2E24750F45009F469D /* BDSUploaderParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSUploaderParameters.h; sourceTree = "<group>"; };
+		C63EAB2F24750F45009F469D /* BDSWakeupDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSWakeupDefines.h; sourceTree = "<group>"; };
+		C63EAB3124750F45009F469D /* BDRecognizerViewParamsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewParamsObject.h; sourceTree = "<group>"; };
+		C63EAB3224750F45009F469D /* BDRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewController.h; sourceTree = "<group>"; };
+		C63EAB3324750F45009F469D /* BDTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDTheme.h; sourceTree = "<group>"; };
+		C63EAB3424750F45009F469D /* BDRecognizerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewDelegate.h; sourceTree = "<group>"; };
+		C63EAB3624751489009F469D /* BaiduASRSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduASRSDKManager.m; sourceTree = "<group>"; };
+		C63EAB3724751489009F469D /* BaiduASRSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduASRSDKManager.h; sourceTree = "<group>"; };
+		C63EAB3D247518A9009F469D /* BaiduASRPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduASRPlugin.h; sourceTree = "<group>"; };
+		C63EAB3E247518A9009F469D /* BaiduASRPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaiduASRPlugin.m; sourceTree = "<group>"; };
 		C885791A60FC448DC6D8B7C3 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		CF183FAECBE1C37D3EEEA405 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,11 +115,15 @@
 			files = (
 				C61504F0247507C2006052D8 /* CFNetwork.framework in Frameworks */,
 				C61504F624750802006052D8 /* GLKit.framework in Frameworks */,
+				C63EAB3B24751834009F469D /* libsqlite3.0.tbd in Frameworks */,
 				C61504AF247505A7006052D8 /* libBaiduSpeechSDK.a in Frameworks */,
 				C61504E6247506CF006052D8 /* CoreTelephony.framework in Frameworks */,
 				C61504EE247507BB006052D8 /* AVFoundation.framework in Frameworks */,
 				C61504F2247507EF006052D8 /* CoreLocation.framework in Frameworks */,
+				C63EAB3A2475182C009F469D /* libz.1.2.5.tbd in Frameworks */,
+				C63EAB3924751824009F469D /* libc++.tbd in Frameworks */,
 				4EE755F307A8DAB521627B4F /* Pods_Runner.framework in Frameworks */,
+				C63EAB3C2475183F009F469D /* libiconv.2.4.0.tbd in Frameworks */,
 				C61504F4247507FC006052D8 /* SystemConfiguration.framework in Frameworks */,
 				C61504EC247507B4006052D8 /* AudioToolbox.framework in Frameworks */,
 			);
@@ -199,6 +226,11 @@
 		C61504AB2475057B006052D8 /* BaiduASR */ = {
 			isa = PBXGroup;
 			children = (
+				C63EAB3D247518A9009F469D /* BaiduASRPlugin.h */,
+				C63EAB3E247518A9009F469D /* BaiduASRPlugin.m */,
+				C63EAB3724751489009F469D /* BaiduASRSDKManager.h */,
+				C63EAB3624751489009F469D /* BaiduASRSDKManager.m */,
+				C63EAB2624750F45009F469D /* BDSClientHeaders */,
 				C61504D624750646006052D8 /* BDSClientEASRResources */,
 				C61504D42475063F006052D8 /* BDSClientResources */,
 				C61504AC247505A7006052D8 /* BDSClientLib */,
@@ -226,6 +258,33 @@
 				C61504DD24750646006052D8 /* bds_easr_dnn_wakeup_model.dat */,
 			);
 			path = BDSClientEASRResources;
+			sourceTree = "<group>";
+		};
+		C63EAB2624750F45009F469D /* BDSClientHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				C63EAB2824750F45009F469D /* BDSWakeupParameters.h */,
+				C63EAB2924750F45009F469D /* BDSASRParameters.h */,
+				C63EAB2A24750F45009F469D /* BDSEventManager.h */,
+				C63EAB2B24750F45009F469D /* .gitIgnore */,
+				C63EAB2C24750F45009F469D /* BDSUploaderDefines.h */,
+				C63EAB2D24750F45009F469D /* BDSASRDefines.h */,
+				C63EAB2E24750F45009F469D /* BDSUploaderParameters.h */,
+				C63EAB2F24750F45009F469D /* BDSWakeupDefines.h */,
+				C63EAB3024750F45009F469D /* UIHeaders */,
+			);
+			path = BDSClientHeaders;
+			sourceTree = "<group>";
+		};
+		C63EAB3024750F45009F469D /* UIHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				C63EAB3124750F45009F469D /* BDRecognizerViewParamsObject.h */,
+				C63EAB3224750F45009F469D /* BDRecognizerViewController.h */,
+				C63EAB3324750F45009F469D /* BDTheme.h */,
+				C63EAB3424750F45009F469D /* BDRecognizerViewDelegate.h */,
+			);
+			path = UIHeaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +323,7 @@
 				TargetAttributes = {
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = HG8SBJDJPT;
 						LastSwiftMigration = 1100;
 					};
 				};
@@ -298,6 +358,7 @@
 				C61504E224750646006052D8 /* bds_easr_gramm.dat in Resources */,
 				C61504E124750646006052D8 /* bds_easr_mfe_dnn.dat in Resources */,
 				C61504DF24750646006052D8 /* bds_easr_basic_model.dat in Resources */,
+				C63EAB3524750F45009F469D /* .gitIgnore in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				C61504E324750646006052D8 /* bds_easr_wakeup_words.dat in Resources */,
 				C61504DE24750646006052D8 /* bds_license.dat in Resources */,
@@ -387,6 +448,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				C63EAB3F247518A9009F469D /* BaiduASRPlugin.m in Sources */,
+				C63EAB3824751489009F469D /* BaiduASRSDKManager.m in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = HG8SBJDJPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -483,7 +547,7 @@
 					"$(PROJECT_DIR)/Flutter",
 					"$(PROJECT_DIR)/Plugins/BaiduASR/BDSClientLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterTrip;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.caver.flutterTrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -606,6 +670,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = HG8SBJDJPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,7 +683,7 @@
 					"$(PROJECT_DIR)/Flutter",
 					"$(PROJECT_DIR)/Plugins/BaiduASR/BDSClientLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterTrip;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.caver.flutterTrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -634,6 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = HG8SBJDJPT;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -646,7 +712,7 @@
 					"$(PROJECT_DIR)/Flutter",
 					"$(PROJECT_DIR)/Plugins/BaiduASR/BDSClientLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterTrip;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.caver.flutterTrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
