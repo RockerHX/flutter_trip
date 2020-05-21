@@ -12,7 +12,11 @@ TravelTabModel _$TravelTabModelFromJson(Map<String, dynamic> json) {
     ..params = json['params'] == null
         ? null
         : TravelTabParams.fromJson(json['params'] as Map<String, dynamic>)
-    ..tabs = json['tabs'] as List;
+    ..tabs = (json['tabs'] as List)
+        ?.map((e) => e == null
+            ? null
+            : TravelTabItem.fromJson(e as Map<String, dynamic>))
+        ?.toList();
 }
 
 Map<String, dynamic> _$TravelTabModelToJson(TravelTabModel instance) =>
