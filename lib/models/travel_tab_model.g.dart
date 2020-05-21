@@ -8,12 +8,16 @@ part of 'travel_tab_model.dart';
 
 TravelTabModel _$TravelTabModelFromJson(Map<String, dynamic> json) {
   return TravelTabModel()
-    ..labelName = json['labelName'] as String
-    ..groupChannelCode = json['groupChannelCode'] as String;
+    ..url = json['url'] as String
+    ..params = json['params'] == null
+        ? null
+        : TravelTabParams.fromJson(json['params'] as Map<String, dynamic>)
+    ..tabs = json['tabs'] as List;
 }
 
 Map<String, dynamic> _$TravelTabModelToJson(TravelTabModel instance) =>
     <String, dynamic>{
-      'labelName': instance.labelName,
-      'groupChannelCode': instance.groupChannelCode,
+      'url': instance.url,
+      'params': instance.params,
+      'tabs': instance.tabs,
     };

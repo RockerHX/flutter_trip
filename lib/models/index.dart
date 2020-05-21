@@ -1,5 +1,5 @@
 export 'travel_tab_params_page.dart';
-export 'travel_tab_Item.dart';
+export 'travel_tab_item.dart';
 export 'travel_model_article_poi.dart';
 export 'grid_nav_item.dart';
 export 'travel_model.dart';
