@@ -1,24 +1,17 @@
 import 'dart:convert';
 
-import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_trip/models/index.dart';
 
-const TRAVEL_DAO_URL =
-    'https://www.devio.org/io/flutter_app/json/travel_page.json';
-
 class TravelDao {
-  static Future<TravelTabModel> fetch() async {
+  static Future<TravelModelResult> fetch() async {
     try {
-      Response response = await Dio().get(TRAVEL_DAO_URL);
-      switch (response.statusCode) {
-        case 200:
-          final result = json.decode(response.toString());
-          return TravelTabModel.fromJson(result);
-          break;
-        default:
-          return null;
-          break;
-      }
+      rootBundle.loadString('assets/data/travel.json').then(
+        (value) {
+          final result = json.decode(value);
+          return TravelModelResult.fromJson(result);
+        },
+      );
     } catch (e) {
       print(e);
       return null;
