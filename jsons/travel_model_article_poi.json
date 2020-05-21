@@ -1,0 +1,12 @@
+{
+    "poiType": 3,
+    "poiId": 78941,
+    "poiName": "上野公园",
+    "businessId": 13354,
+    "districtId": 294,
+    "poiExt": "$travel_model_article_poi_ext",
+    "source": 2,
+    "isMain": 0,
+    "isInChina": false,
+    "countryName": "日本"
+}

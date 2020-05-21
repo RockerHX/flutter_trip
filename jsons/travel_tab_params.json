@@ -1,0 +1,11 @@
+{
+    "districtId": -1,
+    "groupChannelCode": "tourphoto_global1",
+    "type": null,
+    "lat": -180,
+    "lon": -180,
+    "locatedDistrictId": 2,
+    "pagePara": "$travel_tab_params_page",
+    "imageCutType": 1,
+    "contentType": "json"
+}
