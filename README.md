@@ -14,7 +14,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # flutter_trip
 
-[慕课网仿携程网App](https://coding.imooc.com/class/321.html)，基于Flutter支持Android与iOS平台。
+[仿携程网App](https://github.com/RockerHX/flutter_trip)，基于Flutter支持Android与iOS平台。
 
 ## 目录
 
